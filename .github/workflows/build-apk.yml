@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: streakly-apk-ready
+
     steps:
       - uses: actions/checkout@v4
 
@@ -45,5 +49,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: streakly-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: streakly-apk-ready/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 14
